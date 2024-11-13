@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+build
+dist
+*.env
+.idea
+*.suo
+*.ntvs_analysis.dat
+*.njsproj
+*.log
+.DS_Store
+Thumbs.db
