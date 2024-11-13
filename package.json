@@ -1,0 +1,23 @@
+{
+  "name": "credfast-api",
+  "version": "1.0.0",
+  "description": "Backend to an financial application",
+  "main": "src/index.js",
+  "scripts": {
+    "debug": "nodemon src/index"
+  },
+  "author": "Gustavo P. Santana",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "date-craft": "^1.0.8",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "joi": "^17.12.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "nodemailer": "^6.9.7"
+  }
+}
