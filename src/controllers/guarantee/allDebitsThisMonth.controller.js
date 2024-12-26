@@ -4,7 +4,7 @@ const dateCraft = require("date-craft");
 async function allDebitsThisMonth(sellerId) {
     try {
         const debits = await debitModel.find({ sellerId:sellerId });
-        var originalValue = 0;
+        var totalValue = 0;
         var debitsThisMonth = 0;
 
         var newActualDate = dateCraft.getCurrentDate();
@@ -17,11 +17,11 @@ async function allDebitsThisMonth(sellerId) {
             var createdThisMonth = debitDate.getMonth() == newActualDate.getMonth();
 
             if (createdThisMonth) {
-                originalValue = parseFloat(originalValue) + parseFloat(debit.originalValue);
+                totalValue = parseFloat(totalValue) + parseFloat(debit.totalValue);
             }
         });
 
-        debitsThisMonth = originalValue + ((originalValue / 100) * 20);
+        debitsThisMonth = totalValue;
 
         return debitsThisMonth;
 
