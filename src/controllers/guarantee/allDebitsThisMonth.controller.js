@@ -14,7 +14,7 @@ async function allDebitsThisMonth(sellerId) {
             var debitDate = new Date(debit.firstPaymentDate);
             debitDate.setHours(debitDate.getHours() + 8)
 
-            var createdThisMonth = debitDate.getMonth() == newActualDate.getMonth();
+            var createdThisMonth = (debitDate.getMonth() == newActualDate.getMonth()) && (debitDate.getFullYear() == newActualDate.getFullYear());
 
             if (createdThisMonth) {
                 totalValue = parseFloat(totalValue) + parseFloat(debit.totalValue);
