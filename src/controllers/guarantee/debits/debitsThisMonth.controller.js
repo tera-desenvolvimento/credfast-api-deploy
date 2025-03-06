@@ -10,7 +10,7 @@ async function debitsThisMonth(sellerId) {
         newActualDate.setHours(newActualDate.getHours() - 3);
 
         debits.forEach(debit => {
-            var createdThisMonth = new Date(debit.firstPaymentDate).getMonth() == newActualDate.getMonth();
+            var createdThisMonth = (new Date(debit.firstPaymentDate).getMonth() == newActualDate.getMonth()) && (new Date(debit.firstPaymentDate).getFullYear() == newActualDate.getFullYear());
 
             if (createdThisMonth) {
                 debitsThisMonth = parseFloat(debitsThisMonth) + parseFloat(debit.originalValue);

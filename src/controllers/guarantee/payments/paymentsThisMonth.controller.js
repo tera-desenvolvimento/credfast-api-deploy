@@ -14,10 +14,10 @@ async function paymentsThisMonth(sellerId) {
                 var paymentDate = new Date(payment[0].date);
                 paymentDate.setHours(paymentDate.getHours() - 3);
 
-                var paidThisMonth = paymentDate.getMonth() == newActualDate.getMonth();
+                var paidThisMonth = (paymentDate.getMonth() == newActualDate.getMonth()) && (paymentDate.getFullYear() == newActualDate.getFullYear());
 
                 if (paidThisMonth) {
-                    console.log(payment[0].date);
+                    //console.log(payment[0].date);
                     paymentsThisMonth = parseFloat(paymentsThisMonth) + parseFloat(payment[0].value);
                 }
             })
